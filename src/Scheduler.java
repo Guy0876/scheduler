@@ -27,7 +27,7 @@ public class Scheduler extends Thread {
         System.out.println("exited");
     }
     public int checkForTask(String str){
-        for (int i = 0; i < this.counter; i++) {
+        for (int i = 0; i < this.counter + 1; i++) {
             if(taskArr[i].getID().equals( str)) return i;
         }
         return -1;
