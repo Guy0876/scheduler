@@ -13,7 +13,7 @@ public class Scheduler extends Thread {
         String str = sc.next();
         System.out.println("write a message");
         String msg = sc.next();
-        while(str != "EXIT"){
+        while(!str.equals("EXIT")) {
             int index = checkForTask(str);
             this.taskArr[index].addData(msg);
             synchronized (taskArr[index]) {
@@ -24,6 +24,7 @@ public class Scheduler extends Thread {
             msg = sc.next();
         }
         sc.close();
+        System.out.println("exited");
     }
     public int checkForTask(String str){
         for (int i = 0; i < this.counter; i++) {
